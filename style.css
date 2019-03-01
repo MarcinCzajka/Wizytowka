@@ -38,7 +38,7 @@ a {
     margin-left: 10%;
 }
 .main-nav{
-    grid-column: 3 / span 3;
+    grid-column: 4 / span 2;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -51,6 +51,16 @@ a {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     margin-left: 1%;
+}
+.no-entry{
+    display: block;
+    top: 25%;
+    position: relative;
+    font-size: 70px;
+    
+}
+.no-entry p{
+    font-size: 0.4em;
 }
 .about-me{
     grid-row: 2;
