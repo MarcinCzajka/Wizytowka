@@ -1,5 +1,6 @@
 :root{
-    --main-background: rgba(255, 240, 255, 0.4);
+    --main-background: rgba(255, 240, 255, 0.5);
+    --ccBlack: hsla(0, 0%, 30%, 0.9);
 }
 html{
     margin: 0;
@@ -11,8 +12,9 @@ html{
 .container{
     display: grid;
     background-color: var(--main-background);
-    grid-gap: 10px;
-    margin: 4%;
+    grid-gap: 1%;
+    margin-top: 3%;
+    margin-right: 2%;
     margin-left: 12%;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 80px 1fr;
@@ -27,12 +29,13 @@ a {
     overflow: hidden;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    background-color: var(--ccBlack);
 }
 #CCLogo{
     display: block;
-    height: 80px;
-    width: 400px;   
     grid-column: 1;
+    align-self: center;
+    margin-left: 10%;
 }
 .main-nav{
     grid-column: 3 / span 3;
@@ -44,10 +47,10 @@ a {
     grid-row: 2;
     grid-column: 1 / span 4;
     display: grid;
-    grid-gap: 10px;
+    grid-gap: 1%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    margin: 20px;
+    margin-left: 1%;
 }
 .about-me{
     grid-row: 2;
@@ -55,15 +58,15 @@ a {
     display: flex;
     flex-direction: column;
     background-color: rgba(254, 123, 342, 0.3);
-    margin: 20px;
     align-content: center;
-    padding: 30px;
+    padding: 15px;
 }
 .about-me img {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 60%;
+    height: auto;
 }
 .project{
     width: 100%;
