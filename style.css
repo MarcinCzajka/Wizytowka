@@ -60,19 +60,44 @@ html{
     grid-column: 1 / -1;
     background-color: var(--beige);
     border-radius: var(--borderRadius);
-    width: 99%;
+    width: 100vw;
+    height: 100vh;
     justify-self: center;
     box-shadow: var(--shadow);
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas: 
+    "photo . greeting greeting greeting greeting"
+    "photo text1 text1 text1 text1 ."
+    ". . text2 text2 text2 text2"
+    "text3 text3 text3 text3 . ."
+    ". . footer footer . .";
 }
 .who-am-i p {
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 1.5em;
     padding: 2em;
     background-color: var(--beige);
     box-shadow: var(--shadow);
 }
-
+.who-am-i p:nth-child(2){
+    grid-area: greeting;
+}
+.who-am-i p:nth-child(3) {
+    grid-area: text1;
+}
+.who-am-i p:nth-child(4) {
+    grid-area: text2;
+}
+.who-am-i p:nth-child(5) {
+    grid-area: text3;
+}
+.who-am-i p:nth-child(6) {
+    grid-area: footer;
+}
 #McPhoto {
-    position: absolute;
-    display: block;
     height: 15em;
     width: auto;
     margin: 2em 0 2em 2em;
@@ -115,21 +140,8 @@ html{
     margin-right: auto;
 }
 .project img{
-    display: block;
     width: 100%;
-}
-.project .logo {
-    display: block;
-    position: absolute;
-    top: 25%;
-    left: 25%;
-    font-size: 5rem;
-    background-color: #fff;
-}
-.project .logo p{
-    font-size: 2rem;
-}
-.nav-button{
+}.nav-button{
     padding-top: 1.3em;
     padding-bottom: 1.3em;
     padding-left: 25px;
