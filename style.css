@@ -24,8 +24,6 @@ html{
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 80px 100% 100% 100px;
     text-align: justify;
-    text-justify: inter-word;
-    overflow-wrap: break-word;
     overflow: hidden;
 }
 .main-header a {
@@ -65,47 +63,46 @@ html{
     justify-self: center;
     box-shadow: var(--shadow);
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 20px;
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
     grid-template-areas: 
-    "photo . greeting greeting greeting greeting"
-    "photo text1 text1 text1 text1 ."
-    ". . text2 text2 text2 text2"
-    "text3 text3 text3 text3 . ."
-    ". . footer footer . .";
+    ". . . . ."
+    "photo text1 text2 text3 ."
+    ". text1 text2 text3 ."
+    ". text1 text2 text3 ."
+    ". . . . .";
 }
-.who-am-i p {
+.text {
     margin-left: 5%;
     margin-right: 5%;
-    font-size: 1.5em;
+    font-size: 1.2rem;
+    height: 50vh;
     padding: 2em;
     background-color: var(--beige);
     box-shadow: var(--shadow);
+    text-align: center;
 }
-.who-am-i p:nth-child(2){
-    grid-area: greeting;
+.text i{
+    font-size: 5rem;
+    color: var(--reddish);
 }
-.who-am-i p:nth-child(3) {
+.text-1{
     grid-area: text1;
 }
-.who-am-i p:nth-child(4) {
+.text-2{
     grid-area: text2;
 }
-.who-am-i p:nth-child(5) {
+.text-3{
     grid-area: text3;
 }
-.who-am-i p:nth-child(6) {
-    grid-area: footer;
-}
 #McPhoto {
-    height: 15em;
+    grid-area: photo;
+    height: 40vh;
     width: auto;
-    margin: 2em 0 2em 2em;
-    align-self: center;
     border-radius: var(--borderRadius);
     box-shadow: var(--shadow);
-    grid-column: 1;
-    grid-row: 1 / span 2;
+    margin-left: 15%;
 }
 .main-content{
     grid-row: 3;
