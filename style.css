@@ -1,6 +1,7 @@
 :root{
     --main-background: rgba(255, 240, 255, 0.5);
     --ccBlack: hsla(0, 0%, 30%, 0.9);
+    --ccYellow: #FFC53D;
     --beige: #ECE5D4;
     --blueish: #B4DCE7;
     --reddish: #D39A8E;
@@ -26,8 +27,7 @@ html{
     text-align: justify;
     overflow: hidden;
 }
-.main-header a {
-    color: orange;
+a {
     text-decoration: none;
 }
 .main-header {
@@ -52,6 +52,21 @@ html{
     align-items: center;
     justify-content: flex-end;
 }
+.nav-button {
+    padding-top: 1.3em;
+    padding-bottom: 1.3em;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-right: 2em;
+    background-color: hsla(0, 0%, 70%, 0.8);
+    border-radius: 20px;
+    white-space: nowrap;
+    text-align: center;
+    box-shadow: var(--shadow);
+    color: var(--ccYellow);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
 .who-am-i {
     position: relative;
     grid-row: 2;
@@ -60,41 +75,60 @@ html{
     border-radius: var(--borderRadius);
     width: 100vw;
     height: 100vh;
-    justify-self: center;
     box-shadow: var(--shadow);
     display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 3fr) 1fr;
     grid-template-rows: repeat(5, 1fr);
     grid-template-areas: 
     ". . . . ."
     "photo text1 text2 text3 ."
     ". text1 text2 text3 ."
     ". text1 text2 text3 ."
-    ". . . . .";
+    ". button button button .";
 }
 .text {
+    position: relative;
     margin-left: 5%;
     margin-right: 5%;
     font-size: 1.2rem;
-    height: 50vh;
+    height: 60vh;
     padding: 2em;
     background-color: var(--beige);
     box-shadow: var(--shadow);
     text-align: center;
+    opacity: 0;
+    animation: dropdown;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
 }
 .text i{
     font-size: 5rem;
     color: var(--reddish);
 }
-.text-1{
+@keyframes dropdown{
+    0% {top: -150px; left: -30px; opacity: 0;}
+    100% {top: 0; left: 0; opacity: 1;}
+}
+@keyframes ghost{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+.text:nth-child(2){
     grid-area: text1;
+    animation-delay: 1s;
 }
-.text-2{
+.text:nth-child(3) {
     grid-area: text2;
+    animation-delay: 1.5s;
 }
-.text-3{
+.text:nth-child(4) {
     grid-area: text3;
+    animation-delay: 2s;
+}
+.text:last-child{
+    grid-area: button;
+    height: auto;
+    width: 50vw;
 }
 #McPhoto {
     grid-area: photo;
@@ -103,16 +137,14 @@ html{
     border-radius: var(--borderRadius);
     box-shadow: var(--shadow);
     margin-left: 15%;
+    opacity: 0;
+    animation: ghost;
+    animation-duration: 3s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+    transform: rotateY(180deg);
 }
-.main-content{
-    grid-row: 3;
-    grid-column: 2 / span 5;
-    display: grid;
-    grid-gap: 1%;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    margin-left: 1%;
-}
+
 .about-me{
     grid-row: 3;
     grid-column: 1;
@@ -124,13 +156,17 @@ html{
     border-radius: var(--borderRadius);
     box-shadow: var(--shadow);
 }
+.main-content {
+    grid-row: 3;
+    grid-column: 2 / span 5;
+    display: grid;
+    grid-gap: 1.5% 1%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
 .project{
-    position: relative;
-    display: block;
-    width: 40vw;
     height: auto;
     border-radius: var(--borderRadius);
-    background-color: hsla(220, 50%, 50%, 0.5);
     box-shadow: var(--shadow);
     overflow: hidden;
     margin-left: auto;
@@ -138,15 +174,4 @@ html{
 }
 .project img{
     width: 100%;
-}.nav-button{
-    padding-top: 1.3em;
-    padding-bottom: 1.3em;
-    padding-left: 25px;
-    padding-right: 25px;
-    margin-right: 2em;
-    background-color: hsla(0, 0%, 70%, 0.8);
-    border-radius: 20px;
-    white-space: nowrap;
-    text-align: center;
-    box-shadow: var(--shadow);
 }
