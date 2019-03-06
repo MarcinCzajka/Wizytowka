@@ -1,12 +1,14 @@
 :root{
     --main-background: rgba(255, 240, 255, 0.5);
-    --ccBlack: hsla(0, 0%, 30%, 0.9);
+    --ccBlack: navy;
     --ccYellow: #FFC53D;
     --beige: #ECE5D4;
     --blueish: #B4DCE7;
     --reddish: #D39A8E;
     --borderRadius: 15px;
-    --shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    --normal-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    --shadow: 0 4px 8px 0 cyan,
+    0 6px 20px 0 purple;
 }
 html{
     margin: -8px;
@@ -47,25 +49,30 @@ a {
     margin-left: 10%;
 }
 .main-nav{
-    grid-column: 3 / span 3;
+    grid-column: 4 / span 2;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-around;
 }
 .nav-button {
-    padding-top: 1.3em;
-    padding-bottom: 1.3em;
-    padding-left: 25px;
-    padding-right: 25px;
-    margin-right: 2em;
+    padding: 1.3em;
     background-color: hsla(0, 0%, 70%, 0.8);
     border-radius: 20px;
     white-space: nowrap;
     text-align: center;
-    box-shadow: var(--shadow);
+    /*box-shadow: var(--shadow);*/
     color: var(--ccYellow);
+    text-shadow: 0 0 1px var(--ccYellow);
     font-weight: 600;
     letter-spacing: 1px;
+    transition: all 0.2s ease-in;
+}
+.nav-button:hover{
+    box-shadow: 3px 3px 3px var(--ccYellow) inset,
+    -3px -3px 3px var(--ccYellow) inset,
+    3px 3px 5px var(--ccYellow),
+    -3px -3px 5px var(--ccYellow);
+    text-shadow: 1px 1px 3px var(--ccYellow);
 }
 .who-am-i {
     position: relative;
@@ -73,8 +80,10 @@ a {
     grid-column: 1 / -1;
     background-color: var(--beige);
     border-radius: var(--borderRadius);
-    width: 100vw;
+    width: calc(100vw-4%);
     height: 100vh;
+    margin-left: 2%;
+    margin-right: 2%;
     box-shadow: var(--shadow);
     display: grid;
     grid-template-columns: repeat(4, 3fr) 1fr;
@@ -86,7 +95,8 @@ a {
     ". text1 text2 text3 ."
     ". button button button .";
 }
-.text {
+/*.text {
+    border-radius: var(--borderRadius);
     position: relative;
     margin-left: 5%;
     margin-right: 5%;
@@ -100,7 +110,60 @@ a {
     animation: dropdown;
     animation-duration: 3s;
     animation-fill-mode: forwards;
+}*/
+.text-1{
+    grid-area: text1;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 100px;
+    background-color: #fff;
+    border: 8px solid #666;
+    -webkit-border-radius: 58px;
+    -moz-border-radius: 58px;
+    border-radius: 58px;
+    -webkit-box-shadow: 2px 2px 4px #888;
+    -moz-box-shadow: 2px 2px 4px #888;
+    box-shadow: 2px 2px 4px #888;
 }
+/*.text-1 {
+    position: relative;
+    width: 130px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    background-color: #fff;
+    border: 8px solid #666;
+    -webkit-border-radius: 58px;
+    -moz-border-radius: 58px;
+    border-radius: 58px;
+    -webkit-box-shadow: 2px 2px 4px #888;
+    -moz-box-shadow: 2px 2px 4px #888;
+    box-shadow: 2px 2px 4px #888;
+
+}
+.text-1:before{
+        content: ' ';
+        position: absolute;
+        width: 0;
+        height: 0;
+        left: 30px;
+        top: 100px;
+        border: 25px solid;
+        border-color: #666 transparent transparent #666;
+}
+
+.text-1:after{
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: 38px;
+      top: 100px;
+      border: 15px solid;
+      border-color: #fff transparent transparent #fff;
+}*/
 .text i{
     font-size: 5rem;
     color: var(--reddish);
@@ -113,7 +176,7 @@ a {
     0% {opacity:0;}
     100% {opacity:1;}
 }
-.text:nth-child(2){
+/*.text:nth-child(2){
     grid-area: text1;
     animation-delay: 1s;
 }
@@ -124,18 +187,13 @@ a {
 .text:nth-child(4) {
     grid-area: text3;
     animation-delay: 2s;
-}
-.text:last-child{
-    grid-area: button;
-    height: auto;
-    width: 50vw;
-}
+}*/
 #McPhoto {
     grid-area: photo;
     height: 40vh;
     width: auto;
     border-radius: var(--borderRadius);
-    box-shadow: var(--shadow);
+    box-shadow: var(--normal-shadow);
     margin-left: 15%;
     opacity: 0;
     animation: ghost;
@@ -144,25 +202,15 @@ a {
     animation-fill-mode: forwards;
     transform: rotateY(180deg);
 }
-
-.about-me{
-    grid-row: 3;
-    grid-column: 1;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--blueish);
-    align-content: center;
-    padding: 15px;
-    border-radius: var(--borderRadius);
-    box-shadow: var(--shadow);
-}
 .main-content {
     grid-row: 3;
-    grid-column: 2 / span 5;
+    grid-column: 1 / -1;
     display: grid;
     grid-gap: 1.5% 1%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 .project{
     height: auto;
