@@ -15,7 +15,8 @@ html{
     box-sizing: border-box;
     background-color: hsl(0, 0%, 70%);
     background-size: 100vw auto;
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
 }
 .container{
     display: grid;
@@ -42,6 +43,7 @@ a {
     grid-template-columns: repeat(5, 1fr);
     background-color: var(--ccBlack);
     text-transform: uppercase;
+    font-family: 'Titillium Web', sans-serif;
     box-shadow: var(--normal-shadow);
 }
 #CCLogo{
@@ -57,13 +59,14 @@ a {
     justify-content: space-around;
 }
 .nav-button {
-    padding: 1.3em;
+    padding: 1em;
     background-color: hsla(0, 0%, 70%, 0.8);
     border-radius: 20px;
+    margin-top: 5%;
+    margin-bottom: 5%;
     white-space: nowrap;
     text-align: center;
     color: var(--ccYellow);
-    text-shadow: 0 0 1px var(--ccYellow);
     font-weight: 600;
     letter-spacing: 1px;
     transition: all 0.2s ease-in;
@@ -249,8 +252,8 @@ a {
 .view-block{
     position: absolute;
     top: 0;
-    text-align: center;
     padding-top: 25%;
+    text-align: center;
     width:100%;
     height: 100%;
     font-size: 2em;
