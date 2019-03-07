@@ -23,7 +23,7 @@ html{
     grid-gap: 1%;
     width: 100vw;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 80px 100% 100% 100px;
+    grid-template-rows: 40px 100% 100% 100px;
     text-align: justify;
     overflow: hidden;
 }
@@ -33,6 +33,10 @@ a {
 .main-header {
     grid-row: 1;
     grid-column: 1 / span 6;
+    position: fixed;
+    z-index: 5;
+    opacity: 0.95;
+    width: 100vw;
     overflow: hidden;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -58,7 +62,6 @@ a {
     border-radius: 20px;
     white-space: nowrap;
     text-align: center;
-    /*box-shadow: var(--shadow);*/
     color: var(--ccYellow);
     text-shadow: 0 0 1px var(--ccYellow);
     font-weight: 600;
@@ -197,17 +200,28 @@ a {
     text-align: center;
     align-self: center;
 }
+.go-next button {
+    background-color: var(--reddish);
+    color: #000;
+    padding: 5%;
+    padding-top: 1%;
+    font-size: 1em;
+    border: none;
+    box-shadow: var(--normal-shadow);
+    border-radius: var(--borderRadius);
+}
+.go-next button:active {
+    box-shadow: 5px 5px 6px 6px #fff inset,
+    -5px -5px 6px 6px #fff inset;
+}
 .arrow{
     border: solid #000;
     font-size: 0;
     display: inline-block;
     border-width: 0 3px 3px 0;
     padding: 8px;
-      transform: rotate(45deg);
-      -webkit-transform: rotate(45deg);
-}
-.anchor{
-    position: fixed;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 .main-content {
     grid-row: 3;
