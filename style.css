@@ -14,8 +14,6 @@ html{
     margin: -8px;
     box-sizing: border-box;
     background-color: hsl(0, 0%, 70%);
-    /*background-image: url("img/Stripes.svg");
-    background by SVGBackgrounds.com */
     background-size: 100vw auto;
     font-family: sans-serif;
 }
@@ -93,7 +91,7 @@ a {
     "photo text1 text1 text2 text2"
     "text3 text3 text3 text2 text2"
     "text3 text3 text3 . ."
-    ". button button button .";
+    ". . button . .";
 }
 .text{
     position: relative;
@@ -193,6 +191,23 @@ a {
     animation-duration: 3s;
     animation-fill-mode: forwards;
     transform: rotateY(180deg);
+}
+.go-next{
+    grid-area: button;
+    text-align: center;
+    align-self: center;
+}
+.arrow{
+    border: solid #000;
+    font-size: 0;
+    display: inline-block;
+    border-width: 0 3px 3px 0;
+    padding: 8px;
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+}
+.anchor{
+    position: fixed;
 }
 .main-content {
     grid-row: 3;
