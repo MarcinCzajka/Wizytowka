@@ -265,14 +265,9 @@ a {
 }
 /* Projects.html subpage*/
 .projects .container {
-    display: grid;
-    background-color: #ded4ec;
     grid-gap: 3%;
     width: 100vw;
-    grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 20px 100%;
-    text-align: justify;
-    overflow: hidden;
 }
 .projects .main-content {
     grid-row: 2;
@@ -284,3 +279,14 @@ a {
     margin: 0 auto;
 }
 /* Contact.html subpage*/
+.contact .container {
+    grid-template-rows: 20px 100%;
+    
+}
+.contact .text{
+    grid-column: 2 / span 3;
+    text-align: left;
+    margin-top: 15%;
+}
+.contact .text:before {border: 0;}
+.contact .text:after {border: 0;}
