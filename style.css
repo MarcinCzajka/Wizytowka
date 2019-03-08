@@ -280,13 +280,16 @@ a {
 }
 /* Contact.html subpage*/
 .contact .container {
-    grid-template-rows: 20px 100%;
-    
+    grid-template-rows: 20px 150px 100%;
 }
-.contact .text{
+.contact .text:first-child{
     grid-column: 2 / span 3;
     text-align: left;
-    margin-top: 15%;
+    margin-top: 5%;
+    grid-row: 1;
+}
+.contact .text{
+    grid-row: 2;
 }
 .contact .text:before {border: 0;}
 .contact .text:after {border: 0;}
