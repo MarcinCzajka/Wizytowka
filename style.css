@@ -19,6 +19,7 @@ html{
     font-size: 20px;
 }
 .container{
+    display: -ms-grid;
     display: grid;
     background-color: #ded4ec;
     grid-gap: 1%;
@@ -39,6 +40,7 @@ a {
     width: 100vw;
     z-index: 5;
     overflow: hidden;
+    display: -ms-grid;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     background-color: var(--ccBlack);
@@ -54,6 +56,7 @@ a {
 }
 .main-nav{
     grid-column: 6 / -1;
+    display: -ms-grid;
     display: grid;
     grid-template-columns: repeat(3, 1fr) 1%;
     grid-gap: 5%;
@@ -94,6 +97,7 @@ a {
     margin-right: 2%;
     grid-gap: 2em;
     box-shadow: var(--normal-shadow);
+    display: -ms-grid;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
@@ -111,14 +115,12 @@ a {
     padding: 5%;
     border: 1em solid #666;
     -webkit-border-radius: var(--cloudRadius);
-    -moz-border-radius: var(--cloudRadius);
     border-radius: var(--cloudRadius);
     -webkit-box-shadow: var(--normal-shadow);
-    -moz-box-shadow: var(--normal-shadow);
     box-shadow: var(--normal-shadow);
-    animation: ghost;
+    -webkit-animation: ghost 3s;
+    animation: ghost 3s;
     opacity: 0;
-    animation-duration: 3s;
     animation-fill-mode: forwards;
 }
 .text:before{
@@ -155,12 +157,16 @@ a {
 .text:nth-child(3):before {
     left: -3em;
     top: -1.5em;
+    -webkit-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
     transform: rotate(30deg);
 }
 .text:nth-child(3):after {
-        left: -2em;
-        top: -0.3em;
-        transform: rotate(30deg);
+    left: -2em;
+    top: -0.3em;
+    -webkit-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    transform: rotate(30deg);
 }
 .text:nth-child(4) {
     grid-area: text3;
@@ -170,11 +176,15 @@ a {
 .text:nth-child(4):before {
     left: calc(100% - 1em);
     top: -1em;
+    -webkit-transform: rotate(240deg);
+    -ms-transform: rotate(240deg);
     transform: rotate(240deg);
 }
 .text:nth-child(4):after {
     left: calc(100% - 1.7em);
     top: 0;
+    -webkit-transform: rotate(240deg);
+    -ms-transform: rotate(240deg);
     transform: rotate(240deg);
 }
 .text i{
@@ -184,22 +194,49 @@ a {
 .aboutCC{
     position: relative;
     grid-area: aboutCC;
-    animation: dropdown;
+    -webkit-animation: dropdown 1.5s;
+    animation: dropdown 1.5s;
     opacity: 0;
     animation-delay: 3.5s;
-    animation-duration: 1.5s;
     animation-fill-mode: forwards;
 }
 .aboutCC:after{ border: 0;}
 .aboutCC:before{ border: 0;}
 @keyframes dropdown{
     0% {left: calc(100vw + 50px); opacity: 0;}
-    50% {transform: skew(20deg);}
-    100% {top: 0; left: 0; opacity: 1; transform: skew(0);}
+    50% {
+        -webkit-transform: skew(20deg);
+        -ms-transform: skew(20deg);
+        transform: skew(20deg);
+    }
+    100% {
+        top: 0; left: 0; opacity: 1; 
+        -webkit-transform: skew(0);
+        -ms-transform: skew(0);
+        transform: skew(0);
+    }
+}
+@-webkit-keyframes dropdown{
+    0% {left: calc(100vw + 50px); opacity: 0;}
+    50% {
+        -webkit-transform: skew(20deg);
+        -ms-transform: skew(20deg);
+        transform: skew(20deg);
+    }
+    100% {
+        top: 0; left: 0; opacity: 1; 
+        -webkit-transform: skew(0);
+        -ms-transform: skew(0);
+        transform: skew(0);
+    }
 }
 @keyframes ghost{
     0% {opacity:0;}
     100% {opacity:1;}
+}
+@-webkit-keyframes ghost {
+    0% {opacity: 0;} 
+    100% {opacity: 1;}
 }
 #McPhoto {
     grid-area: photo;
@@ -210,9 +247,11 @@ a {
     margin-left: 15%;
     margin-top: 15%;
     opacity: 0;
-    animation: ghost;
-    animation-duration: 3s;
+    -webkit-animation: ghost 3s;
+    animation: ghost 3s;
     animation-fill-mode: forwards;
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
     transform: rotateY(180deg);
     margin-top: auto;
     margin-bottom: auto;
@@ -243,11 +282,13 @@ a {
     border-width: 0 3px 3px 0;
     padding: 8px;
     -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
 .main-content {
     grid-row: 3;
     grid-column: 1 / -1;
+    display: -ms-grid;
     display: grid;
     grid-gap: 1.5% 1%;
     grid-template-columns: 1fr 1fr;
@@ -291,6 +332,7 @@ a {
 .projects .main-content {
     grid-row: 2;
     grid-column: 1 / -1;
+    display: -ms-grid;
     display: grid;
     grid-gap: 1.5% 1%;
     grid-template-columns: 1fr;
@@ -317,7 +359,7 @@ a {
 .contact .text a{
     color: orange;
 }
-@media (max-width: 800px) {
+@media screen and (max-width: 800px) {
     html{
         font-size: 12px;
     }
@@ -358,11 +400,19 @@ a {
     .main-content {
         grid-row: 3;
         grid-column: 1 / -1;
+        display: -ms-grid;
         display: grid;
         grid-gap: 1.5% 1%;
         grid-template-columns: 1fr;
         width: 95vw;
         margin: 0 auto;
+    }
+
+    .contact .text:first-child {
+        grid-column: 1 / -1;
+    }
+    .contact .text {
+        grid-column: 1 / -1;
     }
 }
 @media (min-width: 800px) and (max-width: 1000px) {
