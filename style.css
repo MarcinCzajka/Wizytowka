@@ -96,7 +96,7 @@ a {
     "photo text1 text1 . ."
     "photo text1 text1 text2 text2"
     "text3 text3 text3 text2 text2"
-    "text3 text3 text3 . ."
+    "text3 text3 text3 aboutCC aboutCC"
     ". . button . .";
 }
 .text{
@@ -176,6 +176,11 @@ a {
     font-size: 5rem;
     color: var(--reddish);
 }
+.aboutCC{
+    grid-area: aboutCC;
+}
+.aboutCC:after{ border: 0;}
+.aboutCC:before{ border: 0;}
 @keyframes dropdown{
     0% {top: -150px; left: -30px; opacity: 0;}
     100% {top: 0; left: 0; opacity: 1;}
@@ -282,14 +287,16 @@ a {
 .contact .container {
     grid-template-rows: 20px 150px 100%;
 }
-.contact .text:first-child{
+.contact .text:first-child {
+    grid-row: 1;
     grid-column: 2 / span 3;
     text-align: left;
     margin-top: 5%;
-    grid-row: 1;
 }
 .contact .text{
     grid-row: 2;
+    grid-column: 2 / span 3;
+    margin: 0;
 }
 .contact .text:before {border: 0;}
 .contact .text:after {border: 0;}
