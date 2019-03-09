@@ -315,7 +315,7 @@ a:focus{
 .contact .text a{
     color: orange;
 }
-@media (max-width: 800px) {
+@media (max-width: 800px) and (orientation: portrait) {
     .text:before {
         border: 0;
     }
