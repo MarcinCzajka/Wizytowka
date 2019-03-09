@@ -1,6 +1,7 @@
 :root{
     --main-background: rgba(255, 240, 255, 0.5);
     --ccBlack: #666;
+    --navBackground: #444;
     --ccYellow: #FFC53D;
     --beige: #ECE5D4;
     --blueish: #B4DCE7;
@@ -16,7 +17,7 @@ html{
     background-color: hsl(0, 0%, 70%);
     background-size: 100vw auto;
     font-family: 'Poppins', sans-serif;
-    font-size: 20px;
+    font-size: 16px;
 }
 .container{
     display: -ms-grid;
@@ -43,7 +44,7 @@ a {
     display: -ms-grid;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    background-color: var(--ccBlack);
+    background-color: var(--navBackground);
     text-transform: uppercase;
     font-family: 'Titillium Web', sans-serif;
     box-shadow: var(--normal-shadow);
@@ -63,7 +64,7 @@ a {
 }
 .nav-button {
     padding: 0.7em;
-    background-color: hsla(0, 0%, 70%, 0.8);
+    background-color: var(--ccBlack);
     border-radius: 20px;
     margin-top: 5%;
     margin-bottom: 5%;
