@@ -34,13 +34,13 @@ a {
 }
 .main-header {
     grid-row: 1;
-    grid-column: 1 / span 6;
+    grid-column: 1 / -1;
     position: fixed;
     width: 100vw;
     z-index: 5;
     overflow: hidden;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(12, 1fr);
     background-color: var(--ccBlack);
     text-transform: uppercase;
     font-family: 'Titillium Web', sans-serif;
@@ -48,15 +48,15 @@ a {
 }
 #CCLogo{
     display: block;
-    grid-column: 1;
+    grid-column: 1 / span 2;
     align-self: center;
     margin-left: 10%;
 }
 .main-nav{
-    grid-column: 4 / span 2;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    grid-column: 6 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 1%;
+    grid-gap: 5%;
 }
 .nav-button {
     padding: 0.7em;
@@ -64,6 +64,7 @@ a {
     border-radius: 20px;
     margin-top: 5%;
     margin-bottom: 5%;
+    width: 90%;
     white-space: nowrap;
     text-align: center;
     color: var(--ccYellow);
@@ -307,3 +308,6 @@ a {
 }
 .contact .text:before {border: 0;}
 .contact .text:after {border: 0;}
+.contact .text a{
+    color: orange;
+}
