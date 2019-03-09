@@ -315,7 +315,7 @@ a:focus{
 .contact .text a{
     color: orange;
 }
-@media only screen and (max-width: 800px) {
+@media (max-width: 800px) {
     .text:before {
         border: 0;
     }
