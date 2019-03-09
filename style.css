@@ -72,6 +72,10 @@ a {
     letter-spacing: 2px;
     transition: all 0.2s ease-in;
 }
+a:focus{
+    outline: none;
+    color: red;
+}
 .nav-button:hover{
     box-shadow: 3px 3px 3px var(--ccYellow) inset,
     -3px -3px 3px var(--ccYellow) inset,
@@ -310,4 +314,20 @@ a {
 .contact .text:after {border: 0;}
 .contact .text a{
     color: orange;
+}
+@media only screen and (max-width: 1000px){
+    html{
+        font-size: 15px;
+    }
+    .main-nav {
+        grid-column: 4 / -1;
+    }
+    .who-am-i {
+        grid-template-areas:
+            "photo text1 text1 . ."
+            "photo text1 text1 text2 text2"
+            "text3 text3 text3 text2 text2"
+            "text3 text3 text3 aboutCC aboutCC"
+            ". button button button .";
+    }
 }
