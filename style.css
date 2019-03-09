@@ -177,13 +177,20 @@ a {
     color: var(--reddish);
 }
 .aboutCC{
+    position: relative;
     grid-area: aboutCC;
+    animation: dropdown;
+    opacity: 0;
+    animation-delay: 3.5s;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
 }
 .aboutCC:after{ border: 0;}
 .aboutCC:before{ border: 0;}
 @keyframes dropdown{
-    0% {top: -150px; left: -30px; opacity: 0;}
-    100% {top: 0; left: 0; opacity: 1;}
+    0% {left: calc(100vw + 50px); opacity: 0;}
+    50% {transform: skew(20deg);}
+    100% {top: 0; left: 0; opacity: 1; transform: skew(0);}
 }
 @keyframes ghost{
     0% {opacity:0;}
