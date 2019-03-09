@@ -339,8 +339,8 @@ a {
     margin: 0 auto;
 }
 /* Contact.html subpage*/
-.contact .container {
-    grid-template-rows: 20px 150px 100%;
+.container .contact {
+    height: 100vh;
 }
 .contact .text {
     grid-row: 2;
