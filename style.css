@@ -315,7 +315,10 @@ a:focus{
 .contact .text a{
     color: orange;
 }
-@media (max-width: 1024px) and (orientation: portrait) {
+@media (max-width: 800px) and (orientation: portrait) {
+    html{
+        font-size: 12px;
+    }
     .text:before {
         border: 0;
     }
@@ -337,7 +340,7 @@ a:focus{
     .container {
         grid-gap: 3%;
         width: 100vw;
-        grid-template-rows: 20px 100%;
+        grid-template-rows: 80px 100%;
     }
 
     .main-content {
