@@ -339,19 +339,18 @@ a {
 }
 /* Contact.html subpage*/
 .container .contact {
-    height: 100vh;
+    grid-template-rows: 55px auto auto;
 }
 .contact .text {
-    grid-row: 2;
+    grid-row: 3;
     grid-column: 2 / span 3;
     margin: 0;
     animation-delay: 1s;
 }
 .contact .text:first-child {
-    grid-row: 1;
+    grid-row: 2;
     grid-column: 2 / span 3;
     text-align: left;
-    margin-top: 5%;
 }
 .contact .text:before {border: 0;}
 .contact .text:after {border: 0;}
@@ -369,13 +368,14 @@ a {
         border: 0;
     }
     .container {
-        grid-gap: 3%;
+        grid-gap: 1%;
         width: 100vw;
-        grid-template-rows: 80px 1fr auto 100px;
+        grid-template-rows:  80px auto auto 100px;
+        margin: 0;
     }
     .main-header {
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 40px 60px;
+        grid-template-rows: 40px 40px;
     }
 
     .main-nav {
@@ -383,8 +383,11 @@ a {
         grid-row: 2;
         grid-column: 1 / span 3;
     }
+    .nav-button{
+        margin: 0;
+    }
     .who-am-i {
-        grid-template-rows: repeat(4, 2fr) 1fr;
+        grid-template-rows: repeat(4, auto) 120px;
         grid-template-areas:
             "photo text1 text1 text1 text1"
             "text2 text2 text2 text2 text2"
@@ -396,6 +399,12 @@ a {
         width: 25vw;
         height: auto;
     }
+    .contact .text:first-child {
+        grid-column: 1 / -1;
+    }
+    .contact .text {
+        grid-column: 1 / -1;
+    }
     .main-content {
         grid-row: 3;
         grid-column: 1 / -1;
@@ -406,12 +415,8 @@ a {
         width: 95vw;
         margin: 0 auto;
     }
-
-    .contact .text:first-child {
-        grid-column: 1 / -1;
-    }
-    .contact .text {
-        grid-column: 1 / -1;
+    .projects .main-content {
+        width: 100%;
     }
 }
 @media (min-width: 800px) and (max-width: 1000px) {
