@@ -191,6 +191,7 @@ a {
     transform: rotate(240deg);
 }
 .aboutCC{
+    background-color: var(--blueish);
     position: relative;
     grid-area: aboutCC;
     -webkit-animation: dropdown 1.5s;
@@ -339,6 +340,7 @@ a {
 }
 /* Contact.html subpage*/
 .container .contact {
+    height: 100vh;
     grid-template-rows: 55px auto auto;
 }
 .contact .text {
@@ -361,6 +363,15 @@ a {
     html {
         font-size: 8px;
     }
+    .text:nth-child(2){
+        margin: 0;
+    }
+    .text:nth-child(3) {
+        margin: 0;
+    }
+    .text:nth-child(4) {
+        margin: 0;
+    }
     #McPhoto {
         display: none;
     }
@@ -373,12 +384,12 @@ a {
     .container {
         grid-gap: 1%;
         width: 100vw;
-        grid-template-rows: 80px auto auto 100px;
+        grid-template-rows: 60px auto auto 50px;
         margin: 0;
     }
     .main-header {
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 40px 40px;
+        grid-template-rows: 40px 30px;
     }
     .main-nav {
         grid-template-columns: repeat(3, 1fr);
@@ -424,10 +435,22 @@ a {
     .projects .main-content {
         width: 100%;
     }
+    .contact .text:first-child {
+        text-align: center;
+    }
 }
 @media screen and (min-width: 400px) and (max-width: 800px) {
     html{
         font-size: 12px;
+    }
+    .text:nth-child(2){
+        margin: 0;
+    }
+    .text:nth-child(3) {
+        margin: 0;
+    }
+    .text:nth-child(4) {
+        margin: 0;
     }
     .text:before {
         border: 0;
@@ -438,7 +461,7 @@ a {
     .container {
         grid-gap: 1%;
         width: 100vw;
-        grid-template-rows:  80px auto auto 100px;
+        grid-template-rows:  60px auto auto 75px;
         margin: 0;
     }
     .main-header {
