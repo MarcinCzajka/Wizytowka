@@ -357,7 +357,77 @@ a {
 .contact .text a{
     color: orange;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 400px) {
+    html {
+        font-size: 8px;
+    }
+    .text:before {
+        border: 0;
+    }
+    .text:after {
+        border: 0;
+    }
+    .container {
+        grid-gap: 1%;
+        width: 100vw;
+        grid-template-rows: 80px auto auto 100px;
+        margin: 0;
+    }
+
+    .main-header {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 40px 40px;
+    }
+
+    .main-nav {
+        grid-template-columns: repeat(3, 1fr);
+        grid-row: 2;
+        grid-column: 1 / span 3;
+    }
+
+    .nav-button {
+        margin: 0;
+    }
+
+    .who-am-i {
+        grid-template-rows: repeat(4, auto) 120px;
+        grid-template-areas:
+            "photo text1 text1 text1 text1"
+            "text2 text2 text2 text2 text2"
+            "text3 text3 text3 text3 text3"
+            "aboutCC aboutCC aboutCC aboutCC aboutCC"
+            "button button button button button";
+    }
+
+    #McPhoto {
+        width: 25vw;
+        height: auto;
+    }
+
+    .contact .text:first-child {
+        grid-column: 1 / -1;
+    }
+
+    .contact .text {
+        grid-column: 1 / -1;
+    }
+
+    .main-content {
+        grid-row: 3;
+        grid-column: 1 / -1;
+        display: -ms-grid;
+        display: grid;
+        grid-gap: 1.5% 1%;
+        grid-template-columns: 1fr;
+        width: 95vw;
+        margin: 0 auto;
+    }
+
+    .projects .main-content {
+        width: 100%;
+    }
+}
+@media screen and (min-width: 400px) and (max-width: 800px) {
     html{
         font-size: 12px;
     }
