@@ -441,7 +441,7 @@ a {
         text-align: center;
     }
 }
-@media screen and (min-width: 400px) and (max-width: 800px) {
+@media screen and (min-width: 400px) and (max-width: 1000px) and (orientation: portrait)  {
     html{
         font-size: 12px;
     }
