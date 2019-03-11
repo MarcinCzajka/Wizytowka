@@ -296,7 +296,8 @@ a {
     grid-gap: 1.5% 1%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    margin: 0 2%;
+    width: calc(100vw - 4%);
+    margin: auto;
 }
 .project{
     position: relative;
@@ -518,12 +519,28 @@ a {
     .main-nav {
         grid-column: 4 / -1;
     }
+    .text:nth-child(2){
+        margin: 0 1%;
+    }
+    .text:nth-child(3) {
+        margin: 0 1%;
+    }
+    .text:nth-child(4) {
+        margin: 0 1%;
+    }
+    .text:not(:nth-child(2)):before {
+        border: 0;
+    }
+    .text:not(:nth-child(2)):after {
+        border: 0;
+    }
     .who-am-i {
+        grid-template-rows: repeat(4, auto) 120px;
         grid-template-areas:
-            "photo text1 text1 . ."
-            "photo text1 text1 text2 text2"
-            "text3 text3 text3 text2 text2"
-            "text3 text3 text3 aboutCC aboutCC"
+            "photo text1 text1 text1 text1"
+            "text2 text2 text2 text2 text2"
+            "text3 text3 text3 text3 text3"
+            "aboutCC aboutCC aboutCC aboutCC aboutCC"
             "button button button button button";
     }
 }
