@@ -512,7 +512,7 @@ a {
         width: 100%;
     }
 }
-@media (min-width: 800px) and (max-width: 1000px) {
+@media (min-width: 800px) and (max-width: 1000px) and (orientation: landscape) {
     html{
         font-size: 15px;
     }
