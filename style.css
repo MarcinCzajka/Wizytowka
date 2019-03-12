@@ -206,8 +206,8 @@ a {
 
 #McPhoto {
     grid-area: photo;
-    height: 40vh;
-    width: auto;
+    width: 100%;
+    height: auto;
     border-radius: var(--borderRadius);
     box-shadow: var(--normal-shadow);
     margin: auto 15%;
@@ -240,7 +240,7 @@ a {
     -5px -5px 6px 6px #fff inset;
 }
 .go-next button:hover {
-    transform: scale(1.01);
+    transform: scale(1.02);
 }
 .arrow{
     border: solid #000;
@@ -306,6 +306,7 @@ a {
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
+    height: 95%;
 }
 .project img{
     width: 100%;
@@ -317,6 +318,8 @@ a {
     top: 25%;
     width:100%;
     font-size: 2em;
+    margin-top: 0;
+    margin-left: 0;
 }
 .view-block i{
     font-size: 3em;
@@ -342,7 +345,7 @@ a {
 }
 /* Contact.html subpage*/
 .container .contact {
-    height: 100vh;
+    height: auto;
     grid-template-rows: 55px auto auto;
 }
 .contact .text {
@@ -361,7 +364,7 @@ a {
 .contact .text a{
     color: orange;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 400px), (max-width: 800px) and (orientation: landscape) {
     html {
         font-size: 8px;
     }
