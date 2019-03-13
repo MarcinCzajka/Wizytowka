@@ -2,6 +2,7 @@
     --main-background: #ded4ec;
     --ccBlack: #666;
     --navBackground: #444;
+    --whoAmI: linear-gradient(var(--beige), orange);
     --ccYellow: #FFC53D;
     --beige: #ECE5D4;
     --blueish: #B4DCE7;
@@ -9,7 +10,7 @@
     --borderRadius: 15px;
     --cloudRadius: 75px;
     --normal-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    --shadow: 0 4px 8px 0 cyan, 0 6px 20px 0 purple;
+    --shadow: 0 4px 8px 0 rgb(0, 255, 200), 0 6px 20px 0 rgb(128, 0 ,128);
 }
 html{
     margin: -8px;
@@ -55,6 +56,18 @@ a {
     align-self: center;
     margin-left: 10%;
 }
+#change-color {
+    position: fixed;
+    top: 80px;
+    background-color: var(--blueish);
+    color: #000;
+    font-size: 0.8rem;
+    border: none;
+    height: 50px;
+    width: 70px;
+    box-shadow: var(--normal-shadow);
+    border-radius: var(--borderRadius);
+}
 .main-nav{
     grid-column: 6 / -1;
     display: -ms-grid;
@@ -90,7 +103,7 @@ a {
     position: relative;
     grid-row: 2;
     grid-column: 1 / -1;
-    background-image: linear-gradient(var(--beige), orange);
+    background-image: var(--whoAmI);
     border-radius: var(--borderRadius);
     width: calc(100vw - 4%);
     margin: auto;
@@ -403,6 +416,9 @@ a {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 40px 30px;
     }
+    #change-color{
+        top: 0;
+    }
     .main-nav {
         grid-template-columns: repeat(3, 1fr);
         grid-row: 2;
@@ -480,7 +496,6 @@ a {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 40px 40px;
     }
-
     .main-nav {
         grid-template-columns: repeat(3, 1fr);
         grid-row: 2;
