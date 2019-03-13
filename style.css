@@ -26,7 +26,7 @@ html{
     width: 100vw;
     background-color: var(--main-background);
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 55px 1fr auto 100px;
+    grid-template-rows: 80px auto auto 100px;
     grid-gap: 1%;
     text-align: justify;
     overflow: hidden;
@@ -295,7 +295,7 @@ a {
     display: grid;
     grid-gap: 1.5% 1%;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto auto;
     width: calc(100vw - 4%);
     margin: auto;
 }
@@ -327,26 +327,30 @@ a {
 .view-block p{
     margin: 0;
 }
+
 /* Projects.html subpage*/
-.projects .container {
+
+.container .projects {
     grid-gap: 3%;
     width: 100vw;
-    grid-template-rows: 20px 100%;
+    grid-template-rows: repeat(4, auto);
 }
 .projects .main-content {
-    grid-row: 2;
     grid-column: 1 / -1;
     display: -ms-grid;
     display: grid;
     grid-gap: 1.5% 1%;
     grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto) 100px;
     width: 80vw;
     margin: 0 auto;
 }
+
 /* Contact.html subpage*/
+
 .container .contact {
     height: auto;
-    grid-template-rows: 55px auto auto;
+    grid-template-rows: 55px minmax(45vh, auto) minmax(45vh, auto);
 }
 .contact .text {
     grid-row: 3;
@@ -364,6 +368,9 @@ a {
 .contact .text a{
     color: orange;
 }
+
+/*Media queries*/
+
 @media screen and (max-width: 400px), (max-width: 800px) and (orientation: landscape) {
     html {
         font-size: 8px;
